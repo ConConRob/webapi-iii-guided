@@ -7,6 +7,8 @@ const hubsRouter = require('./hubs/hubs-router.js');
 const server = express();
 
 server.use(express.json());
+server.use(md.logger)
+server.use(md.auth)
 server.use(helmet());
 
 server.use('/api/hubs', hubsRouter);
